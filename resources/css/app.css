@@ -1,6 +1,2 @@
-@import "./publishroom/publishroom.css";
-
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
+@charset "utf-8";
+@import "../../node_modules/bulma/css/bulma.min.css";
