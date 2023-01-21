@@ -1,2 +1,14 @@
 @charset "utf-8";
 @import "../../node_modules/bulma/bulma.sass";
+
+// Blog variables
+@import "./libraries/_vars";
+
+// Common blocks
+@import "./common-blocks/blog-container";
+@import "./common-blocks/header";
+
+// Common scss
+body {
+    background-color: $blog-background;
+}
