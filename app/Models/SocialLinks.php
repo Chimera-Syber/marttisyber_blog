@@ -18,6 +18,7 @@ class SocialLinks extends Model
      * @var array<int, string>
      */
     protected $fillable = [
+        'user_id',
         'github',
         'youtube',
         'vk',
@@ -25,4 +26,12 @@ class SocialLinks extends Model
         'linkedin',
         'twitter',
     ];
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
+    public function user()
+    {
+        return $this->hasOne(User::class, 'user_id', 'id');
+    }
 }

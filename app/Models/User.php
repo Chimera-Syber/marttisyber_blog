@@ -25,6 +25,7 @@ class User extends Authenticatable
         'email',
         'password',
         'avatar',
+        'social_links_id',
     ];
 
     /**
@@ -49,6 +50,11 @@ class User extends Authenticatable
     public function roles()
     {
         return $this->belongsToMany(Role::class, 'user_roles', 'user_id', 'role_id')->withTimestamps();
+    }
+
+    public function socialLinks()
+    {
+        return $this->belongsTo(SocialLinks::class, 'social_links_id', 'id');
     }
 
 
