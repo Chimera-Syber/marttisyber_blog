@@ -10,25 +10,21 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 // Models
 use App\Models\Post;
 
-class Category extends Model
+class Tag extends Model
 {
     use HasFactory, SoftDeletes, Sluggable;
 
-    protected $table = 'categories';
-    protected $guarded = false;
-
-    /**
-     * @var array<int, string>
-     */
     protected $fillable = [
         'title',
         'description',
         'seo_keys',
-        'seo_description',
+        'seo_description'
     ];
+    protected $table = 'tags';
+    protected $guarded = false;
 
     /**
-     * Setting for sluggable (field 'slug')
+     * Return the sluggable configuration array for this model.
      *
      * @return array[]
      */
@@ -37,14 +33,19 @@ class Category extends Model
         return [
           'slug' => [
               'source' => 'title',
-          ],
+          ]
         ];
     }
 
+    /**
+     * Relation with Post class
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
     public function posts()
     {
-        return $this->hasMany(Post::class, 'category_id', 'id');
+        return $this->belongsToMany(Post::class, 'posts_tags', 'tag_id', 'post_id')->withTimestamps();
     }
+
 
 
 }
