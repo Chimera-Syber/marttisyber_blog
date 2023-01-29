@@ -6,7 +6,10 @@
 
 // Common blocks
 @import "./common-blocks/blog-container";
+@import "./common-blocks/content-wrapper";
 @import "./common-blocks/header";
+@import "./common-blocks/main-content";
+@import "./common-blocks/sidebar";
 
 // Common scss
 body {

@@ -1,6 +1,10 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+
+// Publishroom
+use App\Http\Controllers\Publishroom\MainController;
+
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -29,9 +33,9 @@ Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::get('/publishroom', function() {
-    return Inertia::render('Publishroom');
-})->middleware(['auth', 'verified'])->name('publishroom');
+Route::group(['namespace' => 'Publishroom', 'prefix' => 'publishroom', 'middleware' => ['auth', 'verified']], function() {
+    Route::get('/', [MainController::class, 'index'])->name('publishroom.index');
+});
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
