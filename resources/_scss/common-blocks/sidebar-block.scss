@@ -1,0 +1,18 @@
+.sidebar-block {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border-radius: 10px;
+    background-color: $sidebar-block-background;
+    padding: 14px 21px;
+}
+
+.sidebar-block-title {
+    font-family: 'Ubuntu', sans-serif;
+    width: 100%;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 16px;
+    text-transform: uppercase;
+}

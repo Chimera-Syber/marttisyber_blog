@@ -10,6 +10,10 @@
 @import "./common-blocks/header";
 @import "./common-blocks/main-content";
 @import "./common-blocks/sidebar";
+@import "./common-blocks/sidebar-block";
+
+// Admin blocks
+@import "./admin-blocks/main-content-admin-block";
 
 // Common scss
 body {

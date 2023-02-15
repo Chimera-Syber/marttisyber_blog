@@ -1,0 +1,17 @@
+.main-content-admin-block {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border-radius: 10px;
+    background-color: $main-content-block-background;
+    padding: 16px 21px;
+}
+
+.admin-block-title {
+    font-family: 'Ubuntu', sans-serif;
+    width: 100%;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 22px;
+}
