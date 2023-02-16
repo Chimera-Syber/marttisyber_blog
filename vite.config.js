@@ -11,14 +11,6 @@ export default defineConfig({
             refresh: true,
         }),
         react(),
-        viteStaticCopy({
-            targets: [
-                {
-                    src: 'resources/images',
-                    dest: './'
-                }
-            ]
-        })
     ],
     ssr: {
         noExternal: ['@inertiajs/server'],
