@@ -1,0 +1,66 @@
+.adminPanelItemTitle {
+    display: inline-flex;
+    align-items: center;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 16px;
+    color: #000000;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.adminPanelItemTitlePosts {
+    &::before {
+         display: inline-block;
+         content: '';
+         background: url('../images/admin-post-icon.svg') no-repeat center center;
+         width: 24px;
+         height: 24px;
+         margin-right: 4px;
+     }
+}
+
+.adminPanelItemTitleCategory {
+    &::before {
+        display: inline-block;
+        content: '';
+        background: url('../images/admin-category-icon.svg') no-repeat center center;
+        width: 24px;
+        height: 24px;
+        margin-right: 4px;
+    }
+}
+
+.adminPanelItemTitleTag {
+    &::before {
+        display: inline-block;
+        content: '';
+        background: url('../images/admin-tag-icon.svg') no-repeat center center;
+        width: 24px;
+        height: 24px;
+        margin-right: 4px;
+    }
+}
+
+.adminPanelItemTitleUser {
+    &::before {
+        display: inline-block;
+        content: '';
+        background: url('../images/admin-user-icon.svg') no-repeat center center;
+        width: 24px;
+        height: 24px;
+        margin-right: 4px;
+    }
+}
+
+.adminPanelItemTitleSite {
+    &::before {
+        display: inline-block;
+        content: '';
+        background: url('../images/admin-site-icon.svg') no-repeat center center;
+        width: 24px;
+        height: 24px;
+        margin-right: 4px;
+    }
+}
