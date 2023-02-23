@@ -12,12 +12,12 @@ export default function AdminPanel() {
                     title="Посты"
                 />
                 <AdminPanelItem
-                    active={true}
                     title="Список записей"
+                    route={route('publishroom.index')}
                 />
                 <AdminPanelItem
-                    active={false}
                     title="Добавить запись"
+                    route={route('publishroom.post.create')}
                 />
                 <AdminPanelItemsTitle
                     className={TitleStyles.adminPanelItemTitleCategory}

@@ -5,20 +5,16 @@
     gap: 10px;
 }
 
-.blockActive {
-    display: block;
-    width: 4px;
-    height: 36px;
-    background: black;
-    border-radius: 10px;
-}
-
 .blockDefault {
     display: block;
     width: 4px;
     height: 36px;
     background-color: #E6E6E6;
     border-radius: 10px;
+}
+
+.blockActive {
+    background-color: black;
 }
 
 .title {
@@ -29,4 +25,9 @@
     font-size: 16px;
     line-height: 16px;
     color: #000000;
+    text-decoration: none;
+
+    &:hover {
+        color: #ccc;
+    }
 }
