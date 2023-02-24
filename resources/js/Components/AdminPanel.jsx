@@ -6,23 +6,34 @@ export default function AdminPanel() {
     return (
         <>
             <div class="sidebar-block">
-                <span class="sidebar-block-title">Панель управления</span>
+                <a href={route('publishroom.index')} class="sidebar-block-title">Панель управления</a>
+                {/* Posts menu */}
                 <AdminPanelItemsTitle
                     className={TitleStyles.adminPanelItemTitlePosts}
                     title="Посты"
                 />
                 <AdminPanelItem
                     title="Список записей"
-                    route={route('publishroom.index')}
+                    route={route('publishroom.post.index')}
                 />
                 <AdminPanelItem
                     title="Добавить запись"
                     route={route('publishroom.post.create')}
                 />
+                {/* Category menu */}
                 <AdminPanelItemsTitle
                     className={TitleStyles.adminPanelItemTitleCategory}
                     title="Категории"
                 />
+                <AdminPanelItem
+                    title="Список категорий"
+                    route={route('publishroom.category.index')}
+                />
+                <AdminPanelItem
+                    title="Добавить категорию"
+                    route={route('publishroom.category.create')}
+                />
+                {/* Tags menu */}
                 <AdminPanelItemsTitle
                     className={TitleStyles.adminPanelItemTitleTag}
                     title="Теги"

@@ -4,7 +4,8 @@ use App\Http\Controllers\ProfileController;
 
 // Publishroom
 use App\Http\Controllers\Publishroom\MainController;
-use App\Http\Controllers\Publishroom\Post\CreateController as PublishroomCreatePost;
+use App\Http\Controllers\Publishroom\Post\PostController;
+use App\Http\Controllers\Publishroom\Category\CategoryController;
 
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
@@ -38,8 +39,14 @@ Route::group(['namespace' => 'Publishroom', 'prefix' => 'publishroom', 'middlewa
     Route::get('/', [MainController::class, 'index'])->name('publishroom.index');
 
     Route::group(['namespace' => 'Post', 'prefix' => 'post', 'middleware' => ['auth', 'verified']], function() {
-       Route::get('/create', [PublishroomCreatePost::class, 'index'])->name('publishroom.post.create');
-       Route::post('/store', [PublishroomCreatePost::class, 'store'])->name('publishroom.post.store');
+       Route::get('/', [PostController::class, 'index'])->name('publishroom.post.index');
+       Route::get('/create', [PostController::class, 'create'])->name('publishroom.post.create');
+       Route::post('/store', [PostController::class, 'store'])->name('publishroom.post.store');
+    });
+
+    Route::group(['namespace' => 'Category', 'prefix' => 'category', 'middleware' => ['auth', 'verified']], function() {
+        Route::get('/', [CategoryController::class, 'index'])->name('publishroom.category.index');
+        Route::get('/create', [CategoryController::class, 'create'])->name('publishroom.category.create');
     });
 });
 

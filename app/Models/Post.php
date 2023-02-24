@@ -20,14 +20,6 @@ class Post extends Model
 {
     use HasFactory, SoftDeletes, Sluggable;
 
-    protected $fillable = [
-        'title',
-        'description',
-        'content',
-        'preview_image',
-        'seo_keys',
-        'seo_description',
-    ];
 
     protected $table = 'posts';
     protected $guarded = false;
@@ -49,7 +41,7 @@ class Post extends Model
      */
     public function getFulltitleAttribute(): string
     {
-        return date('j-m-y') . $this->title;
+        return date('j-m-y') . '-' . $this->title;
     }
 
     /**
