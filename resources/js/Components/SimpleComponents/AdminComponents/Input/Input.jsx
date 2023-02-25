@@ -1,22 +1,19 @@
 import React from "react";
-import styles from "./styles/style.module.scss";
 
-export default class Input extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-
-    render() {
-        return (
-            <>
+export default function Input(props) {
+    return (
+        <>
+            <div className="control">
                 <input
-                    className={styles.input}
-                    name={this.props.name}
-                    id={this.props.id}
-                    value={this.props.value}
-                    placeholder={this.props.placeholder}
+                    className="input"
+                    type={props.type}
+                    name={props.name}
+                    id={props.id}
+                    value={props.value}
+                    placeholder={props.placeholder}
+                    onChange={props.onChange}
                 />
-            </>
-        );
-    }
+            </div>
+        </>
+    );
 }

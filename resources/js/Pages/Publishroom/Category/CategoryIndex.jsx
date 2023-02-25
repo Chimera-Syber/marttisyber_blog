@@ -11,7 +11,7 @@ export default function CategoryIndex(props) {
             <Header
                 auth={props.auth}/>
 
-            <CategoryIndexLayout />
+            <CategoryIndexLayout props={props} categories={props.categories} />
 
             <Footer />
         </>

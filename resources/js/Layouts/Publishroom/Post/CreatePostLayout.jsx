@@ -1,8 +1,8 @@
 import AdminPanel from "@/Components/AdminPanel";
 import {useForm} from "@inertiajs/inertia-react";
 import Input from "@/Components/SimpleComponents/AdminComponents/Input/Input";
+import Textarea from "@/Components/SimpleComponents/AdminComponents/Textarea/Textarea";
 import React from "react";
-import styles from "./styles/style.module.scss";
 
 export default function CreatePostLayout(props) {
 
@@ -20,26 +20,25 @@ export default function CreatePostLayout(props) {
 
     return (
         <>
-            <section class="blog-container">
-                <div class="content-wrapper">
-                    <div class="main-content">
-                        <div class="main-content-admin-block">
-                            <span class="admin-block-title">Создание поста</span>
+            <section className="blog-container">
+                <div className="content-wrapper">
+                    <div className="main-content">
+                        <div className="main-content-admin-block">
+                            <span className="admin-block-title">Создание поста</span>
                             <form name="createPost" onSubmit={handleSubmit}>
-                                <label className={styles.label} for="title">Название</label>
+                                <label className="label" for="title">Название</label>
                                 <Input
                                     name="title"
                                     id="title"
+                                    type="text"
                                     placeholder="Введите что-то"
                                     value={data.title}
                                     onChange={(e) =>
                                         setData("title", e.target.value)
                                     }
                                 />
-                                <br/>
-                                <label>Контент</label>
-                                <br/>
-                                <textarea
+                                <label className="label" for="content">Контент</label>
+                                <Textarea
                                     name="content"
                                     id="content"
                                     placeholder="Content"
@@ -48,13 +47,12 @@ export default function CreatePostLayout(props) {
                                         setData('content', e.target.value)
                                     }
                                 >
-                                </textarea>
-                                <br/>
-                                <button type="submit">Save</button>
+                                </Textarea>
+                                <button type="submit" className="button is-primary">Сохранить</button>
                             </form>
                         </div>
                     </div>
-                    <div class="sidebar">
+                    <div className="sidebar">
                         <AdminPanel/>
                     </div>
                 </div>

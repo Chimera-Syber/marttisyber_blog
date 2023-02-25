@@ -47,6 +47,7 @@ Route::group(['namespace' => 'Publishroom', 'prefix' => 'publishroom', 'middlewa
     Route::group(['namespace' => 'Category', 'prefix' => 'category', 'middleware' => ['auth', 'verified']], function() {
         Route::get('/', [CategoryController::class, 'index'])->name('publishroom.category.index');
         Route::get('/create', [CategoryController::class, 'create'])->name('publishroom.category.create');
+        Route::post('/store', [CategoryController::class, 'store'])->name('publishroom.category.store');
     });
 });
 
