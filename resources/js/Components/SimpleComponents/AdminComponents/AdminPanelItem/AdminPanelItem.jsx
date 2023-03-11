@@ -5,7 +5,7 @@ export default class AdminPanelItem extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            active: (window.location.href === this.props.route)
+            active: (window.location.href.split('?')[0] === this.props.route)
         }
     }
 

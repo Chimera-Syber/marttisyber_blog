@@ -1,0 +1,66 @@
+.admin-content-table {
+    margin: auto;
+    border-collapse: separate;
+    border-spacing: 0;
+    width: 100%;
+}
+
+.admin-content-tr {
+    border: 1px solid $table-border;
+}
+
+.admin-content-td {
+    padding: 7px;
+    border: 1px solid $table-border;
+    font-family: 'Ubuntu', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 22px;
+}
+
+.admin-content-table-title {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 22px;
+}
+
+.admin-content-tr:first-child .admin-content-td:first-child {
+    border-top-left-radius: 10px;
+    border-right: 0;
+}
+
+.admin-content-tr:last-child .admin-content-td:first-child {
+    border-bottom-left-radius: 10px;
+    border-top: 0;
+}
+
+.admin-content-tr:first-child .admin-content-td:last-child {
+    border-top-right-radius: 10px;
+}
+
+.admin-content-tr:last-child .admin-content-td:last-child {
+    border-bottom-right-radius: 10px;
+}
+
+.admin-content-tr:first-child .admin-content-td:not(:first-child) {
+    border-right: 0;
+}
+
+.admin-content-tr:not(:first-child) .admin-content-td:not(:first-child) {
+    border-top: 0;
+    border-right: 0;
+}
+
+.admin-content-tr:not(:first-child) .admin-content-td:first-child {
+    border-top: 0;
+    border-right: 0;
+}
+
+.admin-content-tr:not(:first-child) .admin-content-td:last-child {
+    border-right: 1px solid $table-border;
+}
+
+.admin-content-tr:first-child .admin-content-td:last-child {
+    border-right: 1px solid $table-border;
+}
